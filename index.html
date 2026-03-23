@@ -57,6 +57,7 @@
     /* Rodapé institucional */
     .site-footer{background:var(--brand);color:#fff;margin-top:auto;padding:28px 18px 22px}
     .site-footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+
     .site-footer .footer-title{font-size:16px;font-weight:700;letter-spacing:.3px;margin-bottom:4px}
     .site-footer p{margin:0;font-size:13px;opacity:.92;line-height:1.6}
     .site-footer .footer-divider{width:60px;height:2px;background:rgba(255,255,255,.35);border-radius:2px;margin:10px 0}
@@ -138,45 +139,87 @@
       <p class="footer-copy">Fontes: <span id="footFonteFapeam">FAPEAM — Editais Abertos</span> · <span id="footFonteCnpq">CNPq — Chamadas Abertas</span></p>
     </div>
   <div style="
-  display:flex;
-  justify-content:flex-end;
-  margin-top:10px;
-  opacity:.16;
-  user-select:none;
-">
-  <div style="
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:4px;
+    position:fixed;
+    right:34px;
+    bottom:26px;
+    opacity:.34;
+    user-select:none;
+    pointer-events:none;
+    text-align:center;
+    z-index:0;
   ">
-    <svg width="42" height="42" viewBox="0 0 120 120" aria-label="Caravela" role="img"
-         fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M10 96 C22 92, 34 92, 46 96 C58 100, 70 100, 82 96 C94 92, 106 92, 114 96" />
-      <path d="M26 104 C36 101, 46 101, 56 104 C66 107, 76 107, 86 104 C96 101, 106 101, 114 104" />
-      <path d="M24 82 L98 82 L88 94 L40 94 Z" />
-      <path d="M28 88 L94 88" />
-      <path d="M63 28 L63 82" />
-      <path d="M48 38 L80 38" />
-      <path d="M63 40 C50 49, 40 63, 34 82" />
-      <path d="M63 42 C82 50, 93 65, 98 82" />
-      <path d="M80 38 C89 51, 95 65, 98 82" />
-      <path d="M63 42 C66 56, 69 69, 74 82" />
-      <path d="M63 28 C69 26, 73 27, 77 30 C73 32, 69 33, 63 31" />
-      <path d="M40 82 L40 72 L48 72 L48 82" />
-      <path d="M84 56 L84 68" />
-      <path d="M78 62 L90 62" />
+    <svg width="92" height="92" viewBox="0 0 180 180"
+         fill="none"
+         stroke="#ffffff"
+         stroke-width="2.8"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         aria-label="Caravela"
+         role="img">
+
+      <!-- casco principal -->
+      <path d="M34 118
+               Q48 108 70 108
+               L118 108
+               Q132 108 144 114
+               Q134 126 116 132
+               L68 132
+               Q48 130 34 118 Z" />
+
+      <!-- linha superior do casco -->
+      <path d="M42 114 Q86 110 136 116" />
+
+      <!-- linhas internas do casco -->
+      <path d="M48 120 L134 122" />
+      <path d="M52 125 L128 127" />
+
+      <!-- proa elevada -->
+      <path d="M34 118 Q28 112 30 106" />
+
+      <!-- popa -->
+      <path d="M144 114 Q148 118 146 124" />
+
+      <!-- mastro principal -->
+      <line x1="94" y1="42" x2="94" y2="118" />
+
+      <!-- pequena bandeira -->
+      <path d="M94 42 Q102 39 110 44 Q102 47 94 45" />
+
+      <!-- verga inclinada -->
+      <path d="M88 58 L48 66" />
+
+      <!-- vela latina principal -->
+      <path d="M90 56
+               Q56 70 40 112
+               Q72 112 96 104
+               Q96 80 90 56 Z" />
+
+      <!-- vela traseira -->
+      <path d="M96 58
+               Q126 72 142 112
+               Q118 110 98 104
+               Q97 82 96 58 Z" />
+
+      <!-- cordame -->
+      <path d="M94 58 Q100 82 110 110" />
+      <path d="M94 60 Q84 84 78 110" />
+
+
+      <!-- pequena linha de água -->
+      <path d="M28 136 Q52 142 78 138 Q104 134 132 138 Q144 140 154 136" />
+
     </svg>
 
     <div style="
       color:#ffffff;
-      font-size:9px;
-      letter-spacing:1.4px;
+      font-size:10px;
+      letter-spacing:2.8px;
+      margin-top:-10px;
+      font-weight:600;
+      opacity:.96;
       line-height:1;
-      text-align:center;
     ">CARAVELA</div>
   </div>
-</div>
   </footer>
 
 <script>

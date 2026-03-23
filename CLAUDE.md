@@ -248,3 +248,80 @@ Depois execute `bash scripts/atualizar.sh` normalmente.
 **FVS-RCP — DEPI**
 Diretoria de Ensino, Pesquisa e Inovação
 Av. Torquato Tapajós, 4.010 — Manaus/AM
+
+---
+
+## Atualização — 2026-03-23
+
+### Alterações realizadas
+
+Iterações sucessivas de refinamento da assinatura/marca d'água "CARAVELA" exibida no canto inferior direito do painel (`index.html`). As alterações desta sessão foram exclusivamente visuais, sem tocar em qualquer lógica de dados, JavaScript, grid ou layout do painel.
+
+**Ciclo de substituições do bloco SVG:**
+1. Bloco com classes CSS dedicadas (`.marca-caravela`, `.caravela-svg`, `.texto-caravela`) substituído por bloco com estilos inline, SVG 56×56 minimalista (casco curvo, duas velas, bandeira).
+2. SVG 56×56 substituído por SVG 74×74 (viewBox 140×140) com casco poligonal, proa/popa curvos, cruz templária simples e bandeira.
+3. SVG 74×74 substituído por SVG 92×92 (viewBox 180×180) com casco realista, vela latina, vela traseira, cordame, verga inclinada, linha de água e cruz templária estilizada com quadrado externo.
+
+**Ajustes finos sobre o SVG 92×92 final:**
+- Cruz templária reposicionada para o centro geométrico da vela esquerda (coordenadas M72/M66/M78).
+- Segunda cruz templária adicionada na vela direita (coordenadas M112/M106/M118).
+- Ambas as cruzes reduzidas e centralizadas em iteração posterior.
+- Ambas as cruzes removidas definitivamente por decisão estética.
+- `margin-top` do texto "CARAVELA" ajustado de `2px` → `-6px` → `-10px` para aproximar a legenda do desenho.
+- CSS das classes órfãs (`.marca-caravela`, `.caravela-svg`, `.texto-caravela`) removido quando o bloco migrou para estilos inline.
+
+**Estado final da assinatura:**
+- Container: `position:fixed; right:34px; bottom:26px; opacity:.34; z-index:0`
+- SVG: `width="92" height="92" viewBox="0 0 180 180"`, stroke branco, `stroke-width="2.8"`
+- Elementos SVG: casco com proa/popa, linhas internas, mastro, bandeira, verga inclinada, vela latina, vela traseira, cordame, linha de água — sem cruzes
+- Texto: `font-size:10px; letter-spacing:2.8px; font-weight:600; opacity:.96; margin-top:-10px`
+
+### Justificativa técnica
+
+A assinatura CARAVELA identifica a autoria/ferramenta do painel de forma discreta. As iterações buscaram equilibrar visibilidade (opacidade e stroke legíveis) com elegância (sem poluição visual). A remoção das cruzes templárias foi decisão estética final — o desenho do barco já é suficientemente identificável sem elementos adicionais dentro das velas.
+
+### Impacto no sistema
+
+Puramente visual. Nenhuma lógica de dados, filtros, scraper, `data.json` ou JavaScript foi alterada. O posicionamento `fixed` garante que a marca d'água flutue sobre o conteúdo sem interferir no scroll ou no layout do rodapé institucional.
+
+### Arquivos afetados
+
+- `index.html` — bloco HTML/SVG da assinatura CARAVELA e CSS inline associado
+
+### Recomendações futuras
+
+- Avaliar migrar o bloco inline para uma classe CSS reutilizável em arquivo `styles.css` externo, facilitando futuros ajustes de opacidade ou tamanho sem editar o HTML diretamente.
+- Testar a legibilidade da assinatura em monitores com fundo claro (modo de alto contraste / acessibilidade) — o stroke branco pode se perder se o footer mudar de cor.
+- Considerar versão SVG exportada como arquivo externo (`caravela.svg`) e referenciada via `<img>`, eliminando o SVG inline do HTML.
+
+---
+
+## Atualização — 2026-03-23
+
+### Alterações realizadas
+
+Nenhuma alteração de código nesta sessão. Sessão de esclarecimento técnico sobre o escopo de arquivos do projeto:
+
+- Confirmado que alterações exclusivamente visuais (marca d'água, layout, CSS) requerem apenas edição de `index.html`.
+- Confirmado que `data.json`, `scripts/scrape_all.py`, `scripts/atualizar.sh`, `scripts/seed_fapeam.json`, `scripts/seed_cnpq.json`, `.nojekyll`, `logo.png` e `logo_depi.png` **não precisam ser alterados** para mudanças visuais.
+
+### Justificativa técnica
+
+O projeto segue separação clara de responsabilidades:
+- **`index.html`** — apresentação visual (front-end)
+- **`data.json`** — dados dos editais (gerado pelo scraper)
+- **`scripts/`** — automação de coleta de dados (back-end)
+
+Alterações visuais são contidas no front-end e não propagam efeitos para a camada de dados ou automação.
+
+### Impacto no sistema
+
+Nenhum. Sessão informativa sem modificações de arquivos do projeto.
+
+### Arquivos afetados
+
+Nenhum arquivo modificado nesta sessão.
+
+### Recomendações futuras
+
+- Documentar explicitamente no início do `CLAUDE.md` a tabela de responsabilidades por arquivo (visual → `index.html`; dados → `data.json`; coleta → `scripts/`), como referência rápida para futuras sessões de manutenção.
