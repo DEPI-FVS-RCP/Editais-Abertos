@@ -325,3 +325,35 @@ Nenhum arquivo modificado nesta sessão.
 ### Recomendações futuras
 
 - Documentar explicitamente no início do `CLAUDE.md` a tabela de responsabilidades por arquivo (visual → `index.html`; dados → `data.json`; coleta → `scripts/`), como referência rápida para futuras sessões de manutenção.
+
+---
+
+## Atualização — 2026-03-23
+
+### Alterações realizadas
+
+Correção do posicionamento da assinatura CARAVELA no rodapé do painel (`index.html`):
+
+- `position:fixed` → `position:absolute` no bloco inline da assinatura CARAVELA (SVG + texto).
+- `position:relative` adicionado à regra CSS `.site-footer`.
+
+### Justificativa técnica
+
+`position:fixed` ancora o elemento em relação à **janela do navegador** (_viewport_), fazendo com que ele acompanhe o scroll da página. A correção usa `position:absolute`, que ancora o elemento em relação ao seu ancestral posicionado mais próximo. Para isso funcionar corretamente, o `<footer>` (`.site-footer`) precisou receber `position:relative`, tornando-se o contexto de posicionamento do elemento filho.
+
+### Impacto no sistema
+
+- A assinatura CARAVELA agora fica estática no canto inferior direito do rodapé, independentemente da posição de rolagem da página.
+- Nenhuma lógica de dados, filtros, scraper, `data.json` ou JavaScript foi alterada.
+- O layout e demais elementos visuais do painel permanecem inalterados.
+
+### Arquivos afetados
+
+- `index.html` — duas alterações cirúrgicas:
+  - Regra CSS `.site-footer`: adicionado `position:relative`.
+  - Bloco inline da assinatura CARAVELA: `position:fixed` substituído por `position:absolute`.
+
+### Recomendações futuras
+
+- Ao adicionar novos elementos posicionados absolutamente dentro do rodapé, verificar que `.site-footer` mantém `position:relative` para evitar regressão do mesmo bug.
+- Avaliar migrar o bloco inline da assinatura para uma classe CSS dedicada em arquivo `styles.css` externo, centralizando o gerenciamento de posicionamento e facilitando futuras manutenções.
