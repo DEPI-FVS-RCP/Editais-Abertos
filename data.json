@@ -7,7 +7,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0012026/",
       "area": "Eventos",
       "type": "Edital",
-      "date": "2026-01-29"
+      "date": ""
     },
     {
       "source_system": "FAPEAM",
@@ -15,7 +15,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0022026-programa-de-apoio-a-popularizacao-da-ciencia-tecnologia-e-inovacao-pop-cti/",
       "area": "Popularização",
       "type": "Edital",
-      "date": "2026-01-29"
+      "date": ""
     },
     {
       "source_system": "FAPEAM",
@@ -23,7 +23,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0032026-programa-de-apoio-a-realizacao-de-eventos-cientificos-e-tecnologicos-no-estado-do-amazonas-parev-2026-chamadas-i-e-ii/",
       "area": "Eventos",
       "type": "Edital",
-      "date": "2026-01-29"
+      "date": ""
     },
     {
       "source_system": "FAPEAM",
@@ -31,7 +31,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0062026-programa-ciencia-na-escola-pce/",
       "area": "Educação",
       "type": "Programa",
-      "date": "2026-01-29"
+      "date": ""
     },
     {
       "source_system": "FAPEAM",
@@ -39,7 +39,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0082026-programa-de-apoio-a-pesquisa-integrada-para-a-qualidade-de-vida-no-amazonas-provida-am-fapeam/",
       "area": "Saúde",
       "type": "Programa",
-      "date": "2026-01-29"
+      "date": ""
     },
     {
       "source_system": "FAPEAM",
@@ -47,7 +47,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/edital-no-0102026-programa-de-apoio-a-organizacao-restauracao-preservacao-e-divulgacao-de-colecoes-biologicas-e-museus-do-estado-do-amazonas-colecoes-biologicasmuseus/",
       "area": "Infraestrutura",
       "type": "Programa",
-      "date": "2026-01-29"
+      "date": ""
     },
     {
       "source_system": "FAPEAM",
@@ -55,7 +55,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/edital-no-012-2026-programa-de-apoio-a-startup-deep-tech-para-inovacao-cientifica-e-tecnologica-deep-tech-fapeam/",
       "area": "Inovação",
       "type": "Programa",
-      "date": "2026-01-29"
+      "date": ""
     },
     {
       "source_system": "FAPEAM",
@@ -63,7 +63,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0132026-programa-amazonidas-meninas-e-mulheres-na-ciencia-2026-2/",
       "area": "Mulheres na ciência",
       "type": "Programa",
-      "date": "2026-02-25"
+      "date": ""
     },
     {
       "source_system": "FAPEAM",
@@ -71,7 +71,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0142026-programa-de-apoio-a-lideranca-feminina-na-inovacao-e-sustentabilidade-da-amazonia-lidera-cientistaam/",
       "area": "Inovação",
       "type": "Programa",
-      "date": "2026-02-25"
+      "date": ""
     },
     {
       "source_system": "FAPEAM",
@@ -79,7 +79,7 @@
       "url": "https://www.fapeam.am.gov.br/editais/chamada-publica-n-o-0012026-programa-de-apoio-a-articulacao-de-pesquisas-em-bioeconomia-e-desenvolvimento-sustentavel-articulabio-cti/",
       "area": "Bioeconomia",
       "type": "Chamada Pública",
-      "date": "2026-01-29"
+      "date": ""
     },
     {
       "source_system": "CNPq",
@@ -87,39 +87,11 @@
       "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
       "area": "Cooperação Internacional",
       "type": "Chamada",
-      "date": "2026-05-18"
+      "date": ""
     },
     {
       "source_system": "CNPq",
       "title": "Chamada CNPq Nº 05/2026 – Empreendedorismo (PIEMP)",
-      "url": "https://portal-adm.cnpq.br/web/guest/pagina-inicial",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
       "area": "Inovação",
-      "type": "Chamada",
-      "date": ""
-    },
-    {
-      "source_system": "CNPq",
-      "title": "Chamada CNPq Nº 03/2026 – Jovem Cientista da Pesca",
-      "url": "https://portal-adm.cnpq.br/web/guest/pagina-inicial",
-      "area": "Pesca",
-      "type": "Chamada",
-      "date": ""
-    },
-    {
-      "source_system": "CNPq",
-      "title": "Chamada CNPq Nº 33/2025 – Epidemiologia",
-      "url": "https://portal-adm.cnpq.br/web/guest/pagina-inicial",
-      "area": "Saúde",
-      "type": "Chamada",
-      "date": ""
-    },
-    {
-      "source_system": "CNPq",
-      "title": "Chamada CNPq Nº 27/2025 – Biodiversidade Amazônica",
-      "url": "https://portal-adm.cnpq.br/web/guest/pagina-inicial",
-      "area": "Biodiversidade",
-      "type": "Chamada",
-      "date": ""
-    }
-  ]
-}
+      "type": "Cha…
