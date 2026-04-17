@@ -1,9 +1,19 @@
 {
   "updated_at": "2026-04-17",
+  "sources": {
+    "FAPEAM": {
+      "name": "FAPEAM — Editais Abertos",
+      "url": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos"
+    },
+    "CNPq": {
+      "name": "CNPq — Chamadas Abertas para Submissão",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao"
+    }
+  },
   "items": [
     {
       "source_system": "FAPEAM",
-      "title": "EDITAL N.º 002/2026 – POP-CTI",
+      "title": "EDITAL N.º 002/2026 – POP-CTI (Popularização da Ciência, Tecnologia e Inovação)",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0022026-programa-de-apoio-a-popularizacao-da-ciencia-tecnologia-e-inovacao-pop-cti/",
       "area": "Popularização",
       "type": "Edital",
@@ -19,7 +29,7 @@
     },
     {
       "source_system": "FAPEAM",
-      "title": "EDITAL N.º 008/2026 – PROVIDA-AM",
+      "title": "EDITAL N.º 008/2026 – PROVIDA-AM/FAPEAM",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0082026-programa-de-apoio-a-pesquisa-integrada-para-a-qualidade-de-vida-no-amazonas-provida-am-fapeam/",
       "area": "Saúde",
       "type": "Edital",
@@ -27,23 +37,23 @@
     },
     {
       "source_system": "FAPEAM",
-      "title": "CHAMADA PÚBLICA N.º 001/2026 – ARTICULABIO CT&I",
-      "url": "https://www.fapeam.am.gov.br/editais/chamada-publica-n-o-0012026-programa-de-apoio-a-articulacao-de-pesquisas-em-bioeconomia-e-desenvolvimento-sustentavel-articulabio-cti/",
-      "area": "Bioeconomia",
-      "type": "Chamada Pública",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 013/2026 – Amazônidas",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0132026-programa-amazonidas-meninas-e-mulheres-na-ciencia-2026-2/",
-      "area": "Mulheres na ciência",
+      "title": "EDITAL N.º 009/2026 – SOCIO TECH FAPEAM",
+      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0092026-programa-de-apoio-a-pesquisa-inovadora-para-o-desenvolvimento-e-aplicacao-de-tecnologias-sociais-de-baixo-custo-para-mitigacao-das-desigualdades-no-estado-do-amazonas-soc/",
+      "area": "Tecnologias sociais",
       "type": "Edital",
       "date": ""
     },
     {
       "source_system": "FAPEAM",
-      "title": "EDITAL N.º 014/2026 – Lidera Cientista/AM",
+      "title": "EDITAL N.º 013/2026 – Programa Amazônidas (Meninas e Mulheres na Ciência 2026)",
+      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0132026-programa-amazonidas-meninas-e-mulheres-na-ciencia-2026-2/",
+      "area": "Mulheres na ciência",
+      "type": "Programa",
+      "date": ""
+    },
+    {
+      "source_system": "FAPEAM",
+      "title": "EDITAL N.º 014/2026 – Lidera Cientista/AM (Liderança feminina na inovação e sustentabilidade da Amazônia)",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0142026-programa-de-apoio-a-lideranca-feminina-na-inovacao-e-sustentabilidade-da-amazonia-lidera-cientistaam/",
       "area": "Inovação",
       "type": "Edital",
@@ -51,19 +61,19 @@
     },
     {
       "source_system": "CNPq",
-      "title": "Chamada MCTI/CNPq Nº 02/2026 – PROSUL Pepe Mujica",
+      "title": "Chamada Pública MCTI/CNPq Nº 02/2026 – PROSUL Pepe Mujica",
       "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-02-2026/chamada-publica-mcti-cnpq-no-02-2026-programa-de-cooperacao-latino-americana-e-caribenha-em-ciencia-tecnologia-e-inovacao-prosul-pepe-mujica",
       "area": "Cooperação Internacional",
-      "type": "Chamada",
-      "date": ""
+      "type": "Chamada Pública",
+      "date": "2026-05-18"
     },
     {
       "source_system": "CNPq",
-      "title": "Chamada Nº 28/2025 – Cooperação CNPq-TUBITAK",
+      "title": "Chamada Nº 28/2025 – Apoio a Projetos de Cooperação CNPq-TUBITAK",
       "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2025/chamada-no-28-2025/chamada-no-28-2025-apoio-a-projetos-de-cooperacao-cnpq-tubitak",
       "area": "Cooperação Internacional",
       "type": "Chamada",
-      "date": ""
+      "date": "2026-05-04"
     }
   ]
 }
