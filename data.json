@@ -3,14 +3,6 @@
   "items": [
     {
       "source_system": "FAPEAM",
-      "title": "EDITAL N.º 001/2026 – Apoio à participação em eventos científicos",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0012026/",
-      "area": "Eventos",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
       "title": "EDITAL N.º 002/2026 – POP-CTI",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0022026-programa-de-apoio-a-popularizacao-da-ciencia-tecnologia-e-inovacao-pop-cti/",
       "area": "Popularização",
@@ -27,34 +19,10 @@
     },
     {
       "source_system": "FAPEAM",
-      "title": "EDITAL N.º 006/2026 – Ciência na Escola",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0062026-programa-ciencia-na-escola-pce/",
-      "area": "Educação",
-      "type": "Programa",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
       "title": "EDITAL N.º 008/2026 – PROVIDA-AM",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0082026-programa-de-apoio-a-pesquisa-integrada-para-a-qualidade-de-vida-no-amazonas-provida-am-fapeam/",
       "area": "Saúde",
-      "type": "Programa",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 010/2026 – Coleções biológicas",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-no-0102026-programa-de-apoio-a-organizacao-restauracao-preservacao-e-divulgacao-de-colecoes-biologicas-e-museus-do-estado-do-amazonas-colecoes-biologicasmuseus/",
-      "area": "Infraestrutura",
-      "type": "Programa",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 012/2026 – Deep Tech",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-no-012-2026-programa-de-apoio-a-startup-deep-tech-para-inovacao-cientifica-e-tecnologica-deep-tech-fapeam/",
-      "area": "Inovação",
-      "type": "Programa",
+      "type": "Edital",
       "date": ""
     },
     {
@@ -62,23 +30,7 @@
       "title": "EDITAL N.º 013/2026 – Amazônidas",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0132026-programa-amazonidas-meninas-e-mulheres-na-ciencia-2026-2/",
       "area": "Mulheres na ciência",
-      "type": "Programa",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 014/2026 – Lidera Cientista",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0142026-programa-de-apoio-a-lideranca-feminina-na-inovacao-e-sustentabilidade-da-amazonia-lidera-cientistaam/",
-      "area": "Inovação",
-      "type": "Programa",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "CHAMADA PÚBLICA N.º 001/2026 – Bioeconomia",
-      "url": "https://www.fapeam.am.gov.br/editais/chamada-publica-n-o-0012026-programa-de-apoio-a-articulacao-de-pesquisas-em-bioeconomia-e-desenvolvimento-sustentavel-articulabio-cti/",
-      "area": "Bioeconomia",
-      "type": "Chamada Pública",
+      "type": "Edital",
       "date": ""
     },
     {
@@ -94,4 +46,8 @@
       "title": "Chamada CNPq Nº 05/2026 – Empreendedorismo (PIEMP)",
       "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
       "area": "Inovação",
-      "type": "Cha…
+      "type": "Chamada",
+      "date": ""
+    }
+  ]
+}
