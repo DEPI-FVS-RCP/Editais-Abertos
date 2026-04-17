@@ -11,7 +11,7 @@
     },
     {
       "source_system": "FAPEAM",
-      "title": "EDITAL N.º 003/2026 – PAREV 2026",
+      "title": "EDITAL N.º 003/2026 – PAREV 2026 (Chamadas I e II)",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0032026-programa-de-apoio-a-realizacao-de-eventos-cientificos-e-tecnologicos-no-estado-do-amazonas-parev-2026-chamadas-i-e-ii/",
       "area": "Eventos",
       "type": "Edital",
@@ -27,6 +27,14 @@
     },
     {
       "source_system": "FAPEAM",
+      "title": "CHAMADA PÚBLICA N.º 001/2026 – ARTICULABIO CT&I",
+      "url": "https://www.fapeam.am.gov.br/editais/chamada-publica-n-o-0012026-programa-de-apoio-a-articulacao-de-pesquisas-em-bioeconomia-e-desenvolvimento-sustentavel-articulabio-cti/",
+      "area": "Bioeconomia",
+      "type": "Chamada Pública",
+      "date": ""
+    },
+    {
+      "source_system": "FAPEAM",
       "title": "EDITAL N.º 013/2026 – Amazônidas",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0132026-programa-amazonidas-meninas-e-mulheres-na-ciencia-2026-2/",
       "area": "Mulheres na ciência",
@@ -34,18 +42,26 @@
       "date": ""
     },
     {
+      "source_system": "FAPEAM",
+      "title": "EDITAL N.º 014/2026 – Lidera Cientista/AM",
+      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0142026-programa-de-apoio-a-lideranca-feminina-na-inovacao-e-sustentabilidade-da-amazonia-lidera-cientistaam/",
+      "area": "Inovação",
+      "type": "Edital",
+      "date": ""
+    },
+    {
       "source_system": "CNPq",
-      "title": "Chamada MCTI/CNPq Nº 02/2026 – PROSUL",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
+      "title": "Chamada MCTI/CNPq Nº 02/2026 – PROSUL Pepe Mujica",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-02-2026/chamada-publica-mcti-cnpq-no-02-2026-programa-de-cooperacao-latino-americana-e-caribenha-em-ciencia-tecnologia-e-inovacao-prosul-pepe-mujica",
       "area": "Cooperação Internacional",
       "type": "Chamada",
       "date": ""
     },
     {
       "source_system": "CNPq",
-      "title": "Chamada CNPq Nº 05/2026 – Empreendedorismo (PIEMP)",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
-      "area": "Inovação",
+      "title": "Chamada Nº 28/2025 – Cooperação CNPq-TUBITAK",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2025/chamada-no-28-2025/chamada-no-28-2025-apoio-a-projetos-de-cooperacao-cnpq-tubitak",
+      "area": "Cooperação Internacional",
       "type": "Chamada",
       "date": ""
     }
