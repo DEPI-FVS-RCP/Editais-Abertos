@@ -1,183 +1,75 @@
 {
-  "updated_at": "2026-03-23",
-  "sources": {
-    "FAPEAM": {
-      "name": "FAPEAM — Editais Abertos",
-      "url": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos"
-    },
-    "CNPq": {
-      "name": "CNPq — Chamadas Abertas para Submissão",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao"
-    }
-  },
+  "updated_at": "2026-04-17",
+  "source": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos",
   "items": [
     {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 001/2026 – Processo eleitoral das Câmaras de Assessoramento Científico (biênio 2026–2028)",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0012026-processo-eleitoral-das-camaras-de-assessoramento-cientifico-da-fapeam-bienio-2026-a-2028/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 001/2026",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0012026/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 002/2026 – POP-CTI (Popularização da Ciência, Tecnologia e Inovação)",
+      "title": "EDITAL N.º 002/2026 – POP CT&I",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0022026-programa-de-apoio-a-popularizacao-da-ciencia-tecnologia-e-inovacao-pop-cti/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
+      "date": "18/05/2026",
+      "area": "Popularização da ciência",
+      "type": "Edital"
     },
     {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 003/2026 – PAREV 2026 (Chamadas I e II)",
+      "title": "EDITAL N.º 003/2026 – PAREV 2026",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0032026-programa-de-apoio-a-realizacao-de-eventos-cientificos-e-tecnologicos-no-estado-do-amazonas-parev-2026-chamadas-i-e-ii/",
-      "area": "Geral",
-      "type": "Chamada Pública",
-      "date": ""
+      "date": "15/07/2026",
+      "area": "Eventos científicos",
+      "type": "Edital"
     },
     {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 004/2026 – PROSPAM/FAPEAM",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-no-0042026-programa-estrategico-de-desenvolvimento-do-setor-primario-produtivo-amazonense-prospamfapeam/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 005/2026 – PAMEQ (Manutenção de Equipamentos)",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0052026-programa-de-apoio-a-manutencao-de-equipamentos-pameq/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 006/2026 – PCE (Ciência na Escola)",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0062026-programa-ciencia-na-escola-pce/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 007/2026 – PAINTER Ecoturismo/FAPEAM",
+      "title": "EDITAL N.º 007/2026 – PAINTER ECOTURISMO",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0072026-programa-de-apoio-a-inovacao-tecnologica-voltada-ao-ecoturismo-em-comunidades-do-interior-do-estado-do-amazonas-painter-ecoturismo-fapeam/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
+      "date": "",
+      "area": "Inovação / ecoturismo",
+      "type": "Edital"
     },
     {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 008/2026 – PROVIDA-AM/FAPEAM",
+      "title": "EDITAL N.º 008/2026 – PROVIDA-AM",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0082026-programa-de-apoio-a-pesquisa-integrada-para-a-qualidade-de-vida-no-amazonas-provida-am-fapeam/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
+      "date": "",
+      "area": "Qualidade de vida / pesquisa integrada",
+      "type": "Edital"
     },
     {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 009/2026 – SOC (Tecnologias sociais de baixo custo)",
+      "title": "EDITAL N.º 009/2026 – SOC (Tecnologias sociais)",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0092026-programa-de-apoio-a-pesquisa-inovadora-para-o-desenvolvimento-e-aplicacao-de-tecnologias-sociais-de-baixo-custo-para-mitigacao-das-desigualdades-no-estado-do-amazonas-soc/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
+      "date": "",
+      "area": "Tecnologias sociais",
+      "type": "Edital"
     },
     {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 010/2026 – Coleções Biológicas e Museus",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-no-0102026-programa-de-apoio-a-organizacao-restauracao-preservacao-e-divulgacao-de-colecoes-biologicas-e-museus-do-estado-do-amazonas-colecoes-biologicasmuseus/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 011/2026 – PROFIX-RH (Mestres e Doutores por calha de rio)",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-no-0112026-programa-de-fixacao-de-recursos-humanos-para-o-interior-do-estado-mestres-e-doutores-por-calha-de-rio-profix-rh-edicao-2026/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 012/2026 – Deep Tech/FAPEAM",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-no-012-2026-programa-de-apoio-a-startup-deep-tech-para-inovacao-cientifica-e-tecnologica-deep-tech-fapeam/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 013/2026 – Programa Amazônidas (Meninas e Mulheres na Ciência 2026)",
+      "title": "EDITAL N.º 013/2026 – AMAZÔNIDAS",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0132026-programa-amazonidas-meninas-e-mulheres-na-ciencia-2026-2/",
-      "area": "Geral",
-      "type": "Programa",
-      "date": ""
-    },
+      "date": "",
+      "area": "Mulheres na ciência",
+      "type": "Edital"
+    }
+  ]
+}
+{
+  "updated_at": "2026-04-17",
+  "source": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
+  "items": [
     {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 014/2026 – Lidera Cientista/AM (Liderança feminina na inovação e sustentabilidade da Amazônia)",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0142026-programa-de-apoio-a-lideranca-feminina-na-inovacao-e-sustentabilidade-da-amazonia-lidera-cientistaam/",
-      "area": "Geral",
-      "type": "Edital",
-      "date": ""
-    },
-    {
-      "source_system": "CNPq",
-      "title": "Chamada pública CNPq/MCTI/MEMP N° 05/2026 - Programa de Iniciação ao Empreendedorismo - PIEMP",
+      "title": "Chamada CNPq Nº 05/2026 – Empreendedorismo Inovador (ITI)",
       "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-05-2026/chamada-publica-cnpq-N-05-2026",
-      "area": "Inovação/Empreendedorismo",
-      "type": "Chamada Pública",
-      "date": "2026-04-13"
+      "date": "",
+      "area": "Inovação / empreendedorismo",
+      "type": "Chamada Pública"
     },
     {
-      "source_system": "CNPq",
-      "title": "CHAMADA PÚBLICA CNPq/MPA Nº 03/2026 PROGRAMA JOVEM CIENTISTA DA PESCA ARTESANAL - INICIAÇÃO CIENTÍFICA JÚNIOR (ICJ)",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-03-2026/chamada-publica-cnpq-mpa-no-03-2026-programa-jovem-cientista-da-pesca-artesanal-iniciacao-cientifica-junior-icj",
-      "area": "Pesca/ICJ",
-      "type": "Chamada Pública",
-      "date": "2026-03-17"
+      "title": "Programa Jovem Cientista da Pesca Artesanal",
+      "url": "https://www.gov.br/cnpq/pt-br",
+      "date": "",
+      "area": "Iniciação científica / comunidades tradicionais",
+      "type": "Programa"
     },
     {
-      "source_system": "CNPq",
-      "title": "Chamada Pública MCTI/CNPq Nº 02/2026 Programa de Cooperação Latino-Americana e Caribenha em Ciência, Tecnologia e Inovação - PROSUL Pepe Mujica",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-02-2026/chamada-publica-mcti-cnpq-no-02-2026-programa-de-cooperacao-latino-americana-e-caribenha-em-ciencia-tecnologia-e-inovacao-prosul-pepe-mujica",
-      "area": "Cooperação Internacional",
-      "type": "Chamada Pública",
-      "date": "2026-04-30"
-    },
-    {
-      "source_system": "CNPq",
-      "title": "Chamada Nº 28/2025 - Apoio a Projetos de Cooperação CNPq-TUBITAK",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2025/chamada-no-28-2025/chamada-no-28-2025-apoio-a-projetos-de-cooperacao-cnpq-tubitak",
-      "area": "Cooperação Internacional",
-      "type": "Chamada",
-      "date": "2026-05-04"
-    },
-    {
-      "source_system": "CNPq",
-      "title": "Chamada CNPq/Daevs/SVSA/MS Nº 33/2025 - Pesquisa, Extensão e Formação em Epidemiologia e Vigilância em Saúde",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2025/chamada-no-33-2025/chamada-cnpq-daevs-svsa-ms-no-33-2025-pesquisa-extensao-e-formacao-em-epidemiologia-e-vigilancia-em-saude",
-      "area": "Saúde Pública",
-      "type": "Chamada",
-      "date": "2026-03-31"
-    },
-    {
-      "source_system": "CNPq",
-      "title": "CNPq/CAPES/IRD Nº 27/2025 Programa de apoio ao Centro Franco-Brasileiro de Biodiversidade Amazônica",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2025/chamada-no-27-2025/cnpq-capes-ird-no-27-2025-programa-de-apoio-ao-centro-franco-brasileiro-de-biodiversidade-amazonica",
-      "area": "Biodiversidade/Amazônia",
-      "type": "Chamada",
-      "date": "2026-03-02"
+      "title": "Cooperação Brasil–Turquia (CNPq–TÜBİTAK)",
+      "url": "https://www.gov.br/cnpq/pt-br",
+      "date": "04/05/2026",
+      "area": "Cooperação internacional",
+      "type": "Chamada Pública"
     }
   ]
 }
