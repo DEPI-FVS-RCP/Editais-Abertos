@@ -1,69 +1,65 @@
 {
-  "updated_at": "2026-04-17",
+  "updated_at": "2026-05-13",
+  "sources": {
+    "FAPEAM": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos",
+    "CNPq": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao"
+  },
   "items": [
     {
       "source_system": "FAPEAM",
-      "title": "EDITAL N.º 014/2026 – LIDERA CIENTISTA/AM",
+      "title": "EDITAL N.º 014/2026 - PROGRAMA DE APOIO À LIDERANÇA FEMININA NA INOVAÇÃO E SUSTENTABILIDADE DA AMAZÔNIA – LIDERA CIENTISTA/AM",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0142026-programa-de-apoio-a-lideranca-feminina-na-inovacao-e-sustentabilidade-da-amazonia-lidera-cientistaam/",
-      "area": "Inovação",
+      "area": "Mulheres na Ciência/Inovação",
       "type": "Edital",
       "date": "2026-05-14"
     },
     {
       "source_system": "FAPEAM",
-      "title": "EDITAL N.º 013/2026 – AMAZÔNIDAS",
+      "title": "EDITAL N.º 013/2026 PROGRAMA AMAZÔNIDAS – MENINAS E MULHERES NA CIÊNCIA 2026",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0132026-programa-amazonidas-meninas-e-mulheres-na-ciencia-2026-2/",
-      "area": "Mulheres na ciência",
+      "area": "Mulheres na Ciência",
       "type": "Edital",
       "date": "2026-05-15"
     },
     {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 009/2026 – SOCIO TECH FAPEAM",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0092026-programa-de-apoio-a-pesquisa-inovadora-para-o-desenvolvimento-e-aplicacao-de-tecnologias-sociais-de-baixo-custo-para-mitigacao-das-desigualdades-no-estado-do-amazonas-soc/",
-      "area": "Tecnologias sociais",
-      "type": "Edital",
-      "date": "2026-05-14"
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 008/2026 – PROVIDA-AM",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0082026-programa-de-apoio-a-pesquisa-integrada-para-a-qualidade-de-vida-no-amazonas-provida-am-fapeam/",
-      "area": "Saúde",
-      "type": "Edital",
-      "date": "2026-05-14"
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL Nº 004/2026 – PROSPAM",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-no-0042026-programa-estrategico-de-desenvolvimento-do-setor-primario-produtivo-amazonense-prospamfapeam/",
-      "area": "Setor primário",
-      "type": "Edital",
-      "date": "2026-04-17"
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 002/2026 – POP CT&I",
-      "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0022026-programa-de-apoio-a-popularizacao-da-ciencia-tecnologia-e-inovacao-pop-cti/",
-      "area": "Popularização da ciência",
-      "type": "Edital",
-      "date": "2026-05-18"
+      "source_system": "CNPq",
+      "title": "Chamada CNPq/SETEC/MCTI N° 13/2026 - Apoio a Eventos de Promoção do Empreendedorismo e da Inovação no Brasil",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/chamada-cnpq-setec-mcti-ndeg-13-2026-apoio-a-eventos-de-promocao-do-empreendedorismo-e-da-inovacao-no-brasil",
+      "area": "Empreendedorismo/Inovação",
+      "type": "Chamada",
+      "date": "2026-05-28"
     },
     {
       "source_system": "CNPq",
-      "title": "Chamada Pública MCTI/CNPq Nº 02/2026 – PROSUL Pepe Mujica",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-02-2026/chamada-publica-mcti-cnpq-no-02-2026-programa-de-cooperacao-latino-americana-e-caribenha-em-ciencia-tecnologia-e-inovacao-prosul-pepe-mujica",
-      "area": "Cooperação Internacional",
+      "title": "Chamada CNPq/MCTI/FNDCT Nº 12/2026 - Programa PCI",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/chamada-cnpq-mcti-fndct-no-12-2026-programa-pci",
+      "area": "Capacitação Institucional/CT&I",
       "type": "Chamada",
-      "date": "2026-05-18"
+      "date": "2026-05-27"
     },
     {
       "source_system": "CNPq",
-      "title": "Chamada Nº 28/2025 – Cooperação CNPq-TUBITAK",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2025/chamada-no-28-2025/chamada-no-28-2025-apoio-a-projetos-de-cooperacao-cnpq-tubitak",
-      "area": "Cooperação Internacional",
+      "title": "Chamada CNPq/MCTI Nº 11/2026 – RENAMA e NAMs",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/chamada-cnpq-mcti-no-11-2026-renama-e-nams",
+      "area": "Métodos Alternativos/RENAMA",
       "type": "Chamada",
-      "date": "2026-05-04"
+      "date": "2026-07-03"
+    },
+    {
+      "source_system": "CNPq",
+      "title": "7ª Chamada pública MCTI/CNPq/BRICS-STI Nº 14/2026",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/7a-chamada-publica-mcti-cnpq-brics-sti-no-14-2026",
+      "area": "Cooperação Internacional",
+      "type": "Chamada Pública",
+      "date": "2026-07-06"
+    },
+    {
+      "source_system": "CNPq",
+      "title": "Chamada Pública MCTI/CNPq Nº 02/2026 Programa de Cooperação Latino-Americana e Caribenha em Ciência, Tecnologia e Inovação - PROSUL Pepe Mujica",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/chamada-publica-mcti-cnpq-no-02-2026-programa-de-cooperacao-latino-americana-e-caribenha-em-ciencia-tecnologia-e-inovacao-prosul-pepe-mujica",
+      "area": "Cooperação Internacional",
+      "type": "Chamada Pública",
+      "date": "2026-05-18"
     }
   ]
 }
