@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-05-13",
+  "updated_at": "2026-05-14",
   "sources": {
-    "FAPEAM": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos",
+    "FAPEAM": "https://www.fapeam.am.gov.br/editais/",
     "CNPq": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao"
   },
   "items": [
@@ -9,7 +9,7 @@
       "source_system": "FAPEAM",
       "title": "EDITAL N.º 014/2026 - PROGRAMA DE APOIO À LIDERANÇA FEMININA NA INOVAÇÃO E SUSTENTABILIDADE DA AMAZÔNIA – LIDERA CIENTISTA/AM",
       "url": "https://www.fapeam.am.gov.br/editais/edital-n-o-0142026-programa-de-apoio-a-lideranca-feminina-na-inovacao-e-sustentabilidade-da-amazonia-lidera-cientistaam/",
-      "area": "Mulheres na Ciência/Inovação",
+      "area": "Liderança Feminina/Inovação",
       "type": "Edital",
       "date": "2026-05-14"
     },
