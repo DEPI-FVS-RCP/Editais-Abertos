@@ -1,54 +1,36 @@
 {
-  "updated_at": "2026-05-14",
+  "updated_at": "2026-05-24",
   "sources": {
-    "FAPEAM": "https://www.fapeam.am.gov.br/editais/",
-    "CNPq": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao"
+    "FAPEAM": {
+      "name": "FAPEAM — Editais",
+      "url": "https://www.fapeam.am.gov.br/editais/"
+    },
+    "CNPq": {
+      "name": "CNPq — Chamadas Abertas para Submissão",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao"
+    }
   },
   "items": [
     {
       "source_system": "FAPEAM",
-      "title": "EDITAL N.º 014/2026 - PROGRAMA DE APOIO À LIDERANÇA FEMININA NA INOVAÇÃO E SUSTENTABILIDADE DA AMAZÔNIA – LIDERA CIENTISTA/AM",
-      "url": "https://www.fapeam.am.gov.br/editais/",
-      "area": "Liderança Feminina/Inovação",
-      "type": "Edital",
-      "date": "2026-05-14"
+      "title": "DIRETRIZES ESPECÍFICAS - PROGRAMA DE MOBILIDADE BRASILLINOIS CHAMADA CONFAP–BRASILLINOIS 2026",
+      "url": "https://www.fapeam.am.gov.br/editais/programa-de-mobilidade-brasillinois-chamada-confap-brasillinois-2026/",
+      "area": "Mobilidade Internacional",
+      "type": "Chamada",
+      "date": "2026-05-26"
     },
     {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 013/2026 PROGRAMA AMAZÔNIDAS – MENINAS E MULHERES NA CIÊNCIA 2026",
-      "url": "https://www.fapeam.am.gov.br/editais/",
-      "area": "Mulheres na Ciência",
-      "type": "Edital",
-      "date": "2026-05-15"
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 009/2026 PROGRAMA DE APOIO À PESQUISA INOVADORA PARA O DESENVOLVIMENTO E APLICAÇÃO DE TECNOLOGIAS SOCIAIS DE BAIXO CUSTO PARA MITIGAÇÃO DAS DESIGUALDADES NO ESTADO DO AMAZONAS – SOCIO TECH FAPEAM",
-      "url": "https://www.fapeam.am.gov.br/editais/",
-      "area": "Tecnologias Sociais/Inovação",
-      "type": "Edital",
-      "date": "2026-05-14"
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 008/2026 PROGRAMA DE APOIO À PESQUISA INTEGRADA PARA A QUALIDADE DE VIDA NO AMAZONAS – PROVIDA-AM- FAPEAM",
-      "url": "https://www.fapeam.am.gov.br/editais/",
-      "area": "Qualidade de Vida/Saúde",
-      "type": "Edital",
-      "date": "2026-05-14"
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "EDITAL N.º 002/2026 - PROGRAMA DE APOIO À POPULARIZAÇÃO DA CIÊNCIA, TECNOLOGIA E INOVAÇÃO – POP CT&I",
-      "url": "https://www.fapeam.am.gov.br/editais/",
+      "source_system": "CNPq",
+      "title": "Chamada CNPq/MCTI/MEC N° 09/2026 - Feiras de Ciências e Mostras Científicas - POP CIÊNCIA",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/chamada-cnpq-mcti-mec-ndeg-09-2026-feiras-de-ciencias-e-mostras-cientificas-pop-ciencia",
       "area": "Popularização da Ciência",
-      "type": "Edital",
-      "date": ""
+      "type": "Chamada",
+      "date": "2026-06-19"
     },
     {
       "source_system": "CNPq",
       "title": "Chamada CNPq/SETEC/MCTI N° 13/2026 - Apoio a Eventos de Promoção do Empreendedorismo e da Inovação no Brasil",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/chamada-cnpq-setec-mcti-ndeg-13-2026-apoio-a-eventos-de-promocao-do-empreendedorismo-e-da-inovacao-no-brasil",
       "area": "Empreendedorismo/Inovação",
       "type": "Chamada",
       "date": "2026-05-28"
@@ -56,15 +38,15 @@
     {
       "source_system": "CNPq",
       "title": "Chamada CNPq/MCTI/FNDCT Nº 12/2026 - Programa PCI",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/chamada-cnpq-mcti-fndct-no-12-2026-programa-pci",
       "area": "Capacitação Institucional/CT&I",
       "type": "Chamada",
-      "date": "2026-05-27"
+      "date": "2026-06-27"
     },
     {
       "source_system": "CNPq",
       "title": "Chamada CNPq/MCTI Nº 11/2026 – RENAMA e NAMs",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/chamada-cnpq-mcti-no-11-2026-renama-e-nams",
       "area": "Métodos Alternativos/RENAMA",
       "type": "Chamada",
       "date": "2026-07-03"
@@ -72,18 +54,10 @@
     {
       "source_system": "CNPq",
       "title": "7ª Chamada pública MCTI/CNPq/BRICS-STI Nº 14/2026",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/7a-chamada-publica-mcti-cnpq-brics-sti-no-14-2026",
       "area": "Cooperação Internacional",
       "type": "Chamada Pública",
       "date": "2026-07-06"
-    },
-    {
-      "source_system": "CNPq",
-      "title": "Chamada Pública MCTI/CNPq Nº 02/2026 Programa de Cooperação Latino-Americana e Caribenha em Ciência, Tecnologia e Inovação - PROSUL Pepe Mujica",
-      "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao",
-      "area": "Cooperação Internacional",
-      "type": "Chamada Pública",
-      "date": "2026-05-18"
     }
   ]
 }
