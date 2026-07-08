@@ -12,6 +12,46 @@
   },
   "items": [
     {
+      "source_system": "FAPEAM",
+      "title": "EDITAL N.º 016/2026 - PROGRAMA DE APOIO À FIXAÇÃO DE DOUTORES NO BRASIL – CONHECIMENTO BRASIL – PROFIX-CB",
+      "url": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos",
+      "area": "Fixação de Doutores",
+      "type": "Edital",
+      "date": "2026-08-17"
+    },
+    {
+      "source_system": "FAPEAM",
+      "title": "DIRETRIZES ESPECÍFICAS DA FAPEAM - CHAMADA ERC-CONFAP 2026: OPORTUNIDADES DE PESQUISA NA EUROPA PARA PESQUISADORES DOUTORES ATIVOS NO BRASIL — CHAMADA ERC 2026",
+      "url": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos",
+      "area": "Cooperação Internacional",
+      "type": "Chamada",
+      "date": "2026-07-10"
+    },
+    {
+      "source_system": "FAPEAM",
+      "title": "CHAMADA PÚBLICA N.º 002/2026 - PROGRAMA DE APOIO A PESQUISAS E AÇÕES ESTRATÉGICAS PARA A BIOECONOMIA INCLUSIVA NO AMAZONAS E NO PARANÁ - FUNDAÇÃO ARAUCÁRIA/FAPEAM",
+      "url": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos",
+      "area": "Bioeconomia",
+      "type": "Chamada Pública",
+      "date": "2026-07-27"
+    },
+    {
+      "source_system": "FAPEAM",
+      "title": "EDITAL N.º 015/2026 - EDITAL FAPEAM DE PRÉ-SELEÇÃO DE REDES ESTRATÉGICAS DE PESQUISA E PÓS-GRADUAÇÃO DA AMAZÔNIA LEGAL - PROGRAMA DE DESENVOLVIMENTO DA PÓS-GRADUAÇÃO (PDPG) – PARCERIAS ESTRATÉGICAS NOS ESTADOS V",
+      "url": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos",
+      "area": "Pós-Graduação/Pesquisa",
+      "type": "Edital",
+      "date": "2026-07-17"
+    },
+    {
+      "source_system": "FAPEAM",
+      "title": "EDITAL N.º 003/2026 - PROGRAMA DE APOIO À REALIZAÇÃO DE EVENTOS CIENTÍFICOS E TECNOLÓGICOS NO ESTADO DO AMAZONAS – PAREV 2026 – CHAMADA II",
+      "url": "https://www.fapeam.am.gov.br/editais/?aba=editais-abertos",
+      "area": "Eventos Científicos",
+      "type": "Edital",
+      "date": "2026-07-15"
+    },
+    {
       "source_system": "CNPq",
       "title": "Chamada CNPq/MinC nº 17/2026 - Apoio ao funcionamento de incubadoras voltadas à Economia Criativa",
       "url": "https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao/chamada-cnpq-minc-no-17-2026-apoio-ao-funcionamento-de-incubadoras-voltadas-a-economia-criativa",
