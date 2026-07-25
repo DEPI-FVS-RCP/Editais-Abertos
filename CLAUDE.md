@@ -14,6 +14,7 @@ Mantido pela **Diretoria de Ensino, Pesquisa e Inovação (DEPI)** da **FVS-RCP*
              https://www.gov.br/cnpq/pt-br/chamadas/abertas-para-submissao
 - **Formato:** `index.html` (front-end) + `data.json` (dados) + `scripts/` (automação)
 - **Publicação:** GitHub Pages (branch `main`, pasta `/root`)
+- **Repositório:** https://github.com/DEPI-FVS-RCP/Editais-Abertos
 
 ---
 
@@ -24,12 +25,13 @@ Editais-Abertos-Unificados-main/
 ├── index.html              — Painel HTML principal (FAPEAM + CNPq em seções separadas)
 ├── data.json               — Base unificada (atualizada pelo scraper)
 ├── .nojekyll               — Necessário para GitHub Pages servir arquivos corretamente
+├── .gitignore               — Ignora .DS_Store
 ├── logo.png                — Logomarca FVS-RCP
-├── logo_depi.png           — Logomarca DEPI
-├── CLAUDE.md               — Este arquivo (histórico e documentação)
+├── logo_depi.png            — Logomarca DEPI
+├── CLAUDE.md                — Este arquivo (histórico e documentação)
 └── scripts/
     ├── scrape_all.py       — Scraper Python unificado (FAPEAM + CNPq)
-    ├── atualizar.sh        — Shell script para execução local + instruções de cron
+    ├── atualizar.sh        — Shell script para execução local + commit/push automático + instruções de cron
     ├── seed_fapeam.json    — Fallback manual de URLs para FAPEAM
     └── seed_cnpq.json      — Fallback manual de {title, url} para CNPq
 ```
@@ -60,7 +62,309 @@ Editais-Abertos-Unificados-main/
 
 ---
 
+## Agentes de trabalho
+
+O projeto define três agentes com responsabilidades separadas para manter a qualidade visual sem
+comprometer a lógica existente. **Fluxo obrigatório:**
+`UI_VISUAL_INSTITUCIONAL` propõe → `UI_COMPONENTES_CARDS` refina → `CORE_LOGIC_QA` valida → só então aplicar.
+
+---
+
+### Agente UI_VISUAL_INSTITUCIONAL
+
+**Escopo:** ajustes visuais globais do painel — tudo que envolve identidade institucional e estrutura
+geral da página, exceto os cards de editais.
+
+**Responsabilidades:**
+- Cabeçalho institucional (`<header>`, logos, título `<h1>`, subtítulo `.t2`)
+- Equilíbrio visual entre `logo.png` (FVS-RCP), `logo_depi.png` (DEPI), título e chips de fonte
+- Paleta de cores harmônica com a identidade FVS-RCP/DEPI (azuis institucionais, contraste acessível)
+- Rodapé institucional (links de fonte, dividers, texto de atualização, `.footer-copy`)
+- Marca d'água CARAVELA (SVG, opacidade, posicionamento)
+- Responsividade geral da página (breakpoints de layout global)
+- Tipografia base (família, tamanho, peso)
+
+**Restrições:**
+- Não alterar IDs ou classes usados pelo JavaScript (`$('filtro')`, `$('err')`, `$('total')` etc.)
+- Não tocar nos cards (`.card`, `.cards`, `.pill`) — esses são escopo de UI_COMPONENTES_CARDS
+- Não alterar `data.json`, `scripts/` ou qualquer lógica JS
+- Não adicionar bibliotecas, frameworks ou dependências externas
+- Mudanças devem ser cirúrgicas e acompanhadas de justificativa no CLAUDE.md
+
+**Arquivo de atuação:** `index.html` (CSS e HTML do cabeçalho e rodapé)
+
+---
+
+### Agente UI_COMPONENTES_CARDS
+
+**Escopo:** componentes de card e área de listagem — tudo que envolve a apresentação dos editais
+individuais e os controles de filtragem.
+
+**Responsabilidades:**
+- Cards de editais: layout interno, sombra, borda, hover, tamanho mínimo
+- Grid `.cards`: colunas (3 no desktop), `gap`, alinhamento vertical dos cards
+- Breakpoints do grid: tablet (`max-width: 1100px` → 2 col.), mobile (`max-width: 680px` → 1 col.)
+- Pills de fonte (`FAPEAM` / `CNPq`), área e tipo: cores, forma, tamanho, espaçamento
+- Destaque visual do prazo (campo `date`): cor, peso, posição dentro do card
+- Separação visual entre a seção FAPEAM e a seção CNPq (título de seção, divider, cor de fundo)
+- Filtros de texto, fonte, área e tipo: layout, espaçamento, estilo dos `<select>` e `<input>`
+- Botões "Copiar tudo" e "Limpar filtros": aparência visual (cor, borda, hover) — sem alterar eventos JS
+- Contadores `#total`, `#totalFapeam`, `#totalCnpq`: posicionamento e tipografia — sem alterar JS
+
+**Restrições:**
+- Não alterar `id` de nenhum elemento (ex.: `cardsFapeam`, `cardsCnpq`, `filtro`, `total` etc.)
+- Não alterar eventos JavaScript (`onclick`, `oninput`, `onchange`)
+- Não alterar a estrutura HTML dos cards gerados pelo JS (apenas o CSS que os estiliza)
+- Não alterar `data.json`, `scripts/` ou lógica de renderização
+- Não adicionar bibliotecas externas
+
+**Arquivo de atuação:** `index.html` (CSS das classes `.card`, `.cards`, `.pill`, filtros, botões)
+
+---
+
+### Agente CORE_LOGIC_QA
+
+**Escopo:** validação funcional completa do painel antes de qualquer mudança ser aplicada definitivamente.
+Não propõe alterações visuais — apenas aprova ou rejeita com lista de problemas encontrados.
+
+**Checklist de validação obrigatório:**
+
+| # | Item | Critério de aprovação |
+|---|------|-----------------------|
+| 1 | Leitura do `data.json` | Fetch retorna 200; `items` é array não vazio; `updated_at` exibido |
+| 2 | Renderização dos cards | Todos os itens de `data.json` geram um card; título, URL e prazo visíveis |
+| 3 | Separação FAPEAM / CNPq | Cards aparecem na seção correta conforme `source_system` |
+| 4 | Filtro por texto | `<input id="filtro">` filtra por título em tempo real |
+| 5 | Filtro por fonte | `<select id="filtroFonte">` exibe só FAPEAM ou só CNPq conforme seleção |
+| 6 | Filtro por área | `<select id="filtroArea">` filtra corretamente; opções populadas do JSON |
+| 7 | Filtro por tipo | `<select id="filtroTipo">` filtra corretamente; opções populadas do JSON |
+| 8 | Botão "Copiar tudo" | Copia lista de URLs/títulos para o clipboard sem erro JS |
+| 9 | Botão "Limpar filtros" | Redefine todos os filtros e reexibe todos os cards |
+| 10 | Contadores | `#total`, `#totalFapeam`, `#totalCnpq` refletem contagem atual após filtros |
+| 11 | Console sem erros | DevTools → Console: zero erros JS após carregamento e interação |
+| 12 | GitHub Pages | Página carrega via `https://` sem dependências externas quebradas |
+| 13 | Responsividade | Layout correto em 320 px, 768 px e 1280 px (simulação DevTools) |
+| 14 | IDs preservados | Nenhum ID usado pelo JS foi renomeado ou removido nas mudanças propostas |
+
+**Fluxo de resposta:**
+- **APROVADO:** lista o que foi verificado e libera a aplicação das mudanças.
+- **REPROVADO:** lista os itens com falha e retorna o controle para o agente responsável corrigir.
+
+**Restrições:**
+- Não edita `index.html`, `data.json` ou `scripts/`
+- Não propõe mudanças visuais
+- Não aprova mudanças que alterem IDs usados pelo JavaScript
+
+---
+
+## Tabela de responsabilidades por arquivo
+
+| Arquivo | Quem altera | Quando |
+|---------|-------------|--------|
+| `index.html` | UI_VISUAL_INSTITUCIONAL, UI_COMPONENTES_CARDS | Após aprovação de CORE_LOGIC_QA |
+| `data.json` | Somente o scraper (`scrape_all.py`) | Nunca manualmente sem autorização explícita |
+| `scripts/scrape_all.py` | Manutenção de coleta | Fora do escopo dos agentes UI/QA |
+| `scripts/atualizar.sh` | Manutenção de coleta e publicação | Fora do escopo dos agentes UI/QA |
+| `scripts/seed_*.json` | Manutenção manual de fallback | Fora do escopo dos agentes UI/QA |
+| `CLAUDE.md` | Todos os agentes | Ao final de cada sessão, registrar o que foi feito |
+
+---
+
 ## Histórico de alterações
+
+### 2026-07-25 — Publicação automática real: conexão git + atualizar.sh com push + desativação da tarefa Claude (Cowork)
+
+**Contexto:**
+Após o redesign visual (registrado abaixo), o usuário reportou que o site publicado estava exibindo
+editais da FAPEAM já encerrados. Investigação revelou que o `data.json` estava parado desde 23/03/2026
+(mais de 4 meses), pois a tarefa agendada criada na sessão anterior ainda não havia rodado (primeira
+execução programada para 5 dias depois). O usuário pediu atualização "sozinha" via busca ativa nos
+dois sites.
+
+**Diagnóstico técnico (bloqueio duplo confirmado por teste direto):**
+1. **Rede:** `curl` a partir do ambiente sandboxed do Claude retornou `403 blocked-by-allowlist` tanto
+   para `fapeam.am.gov.br` quanto para `gov.br/cnpq` — bloqueio de proxy de saída do próprio ambiente,
+   não contornável.
+2. **Credenciais git:** `github.com` respondeu normalmente (200), mas `git push` a partir do sandbox
+   falhou com `could not read Username for 'https://github.com'` — o ambiente sandboxed é um contêiner
+   Linux isolado, sem acesso ao Keychain/credenciais do Mac do usuário, e por política o Claude não
+   pode digitar/armazenar tokens ou senhas em nome do usuário.
+
+**Conclusão:** a automação "100% Claude na nuvem" (tarefa agendada anterior) não é viável para este
+projeto — esbarra em dois bloqueios estruturais do ambiente (rede + isolamento de credenciais), não
+em erro de configuração. A arquitetura correta é rodar a atualização **localmente, no Mac do usuário**,
+via `cron` nativo — que já não tem nenhum dos dois bloqueios.
+
+**Ações realizadas:**
+1. Descoberto que o usuário já havia publicado o painel redesenhado via **upload manual pela interface
+   web do GitHub** (sem git local), no repositório `https://github.com/DEPI-FVS-RCP/Editais-Abertos`.
+   Confirmado por diff direto (`git show origin/main:index.html` vs arquivo local) que `index.html` e
+   `data.json` remotos já eram **idênticos** aos locais — nenhuma perda de trabalho.
+2. Pasta local conectada ao repositório real: `git init` + `git remote add origin` + `git fetch` +
+   `git reset --hard origin/main` (alinhamento seguro, pois conteúdo já era idêntico) + `git config
+   user.name/user.email`.
+3. Adicionados e commitados localmente (aguardando primeiro `git push` manual do usuário):
+   `.gitignore` (ignora `.DS_Store`) e `.nojekyll` (ausente no repositório remoto até então —
+   necessário para o GitHub Pages servir corretamente).
+4. `scripts/atualizar.sh` estendido: ao final da execução do scraper, se houver mudanças em
+   `data.json`, faz `git add` + `git commit` + `git push origin main` automaticamente; se o push
+   falhar por falta de credencial salva, registra aviso no log em vez de quebrar o script
+   (`set -e` mantido para o scraper, mas o bloco git usa `if`, que não aciona `errexit`). Comentário
+   de cabeçalho do script atualizado explicando o pré-requisito de autenticar o `git push` uma vez
+   manualmente para o macOS salvar a credencial no Keychain (reaproveitada silenciosamente pelo cron).
+   Cron de exemplo no cabeçalho do script atualizado de `*/20` para `*/10` dias, alinhado ao pedido
+   do usuário.
+5. Tarefa agendada `editais-abertos-atualizacao` (criada na sessão anterior) **desativada**
+   (`enabled:false`), com descrição atualizada explicando o motivo, para não gerar falsa sensação de
+   automação funcionando em segundo plano.
+6. **Correção de um problema colateral desta própria sessão:** o `git reset --hard origin/main` do
+   passo 2, executado antes de conferir `CLAUDE.md`, sobrescreveu este arquivo com uma versão mais
+   antiga e mais curta presente no repositório remoto (upload manual anterior não incluiu as últimas
+   atualizações de documentação). O conteúdo completo foi restaurado a partir do contexto da conversa
+   (a versão íntegra havia sido lida no início da sessão) — nenhuma perda definitiva de histórico.
+
+**Pendências / próximos passos do usuário:**
+- Rodar `git push origin main` manualmente **uma vez** nesta pasta (autenticando com usuário +
+  Personal Access Token do GitHub, ou SSH) para: (a) publicar os commits de `.gitignore`/`.nojekyll`
+  já preparados; (b) salvar a credencial no Keychain do macOS para uso silencioso pelo `cron`.
+- Adicionar a linha de `crontab` (fornecida na resposta ao usuário) no Terminal do próprio Mac, para
+  rodar `scripts/atualizar.sh` a cada 10 dias — isso resolve na origem tanto a busca ativa (rede sem
+  bloqueio no Mac) quanto a publicação (credencial já salva no Keychain).
+- Rodar `bash scripts/atualizar.sh` manualmente pelo menos uma vez para corrigir imediatamente os
+  editais desatualizados exibidos no site (o `data.json` atual ainda reflete 23/03/2026).
+
+**Impacto no sistema:** Nenhuma lógica de renderização, filtros ou dados foi alterada nesta sessão.
+Mudanças restritas a infraestrutura de publicação (`scripts/atualizar.sh`, conexão git, tarefa
+agendada) e à correção do próprio `CLAUDE.md`.
+
+**Arquivos afetados:** `scripts/atualizar.sh`, `.gitignore` (novo), `.nojekyll` (adicionado ao git),
+`CLAUDE.md` (este registro + restauração de conteúdo).
+
+---
+
+### 2026-07-25 — Redesign Apple-like institucional + automação de atualização (Cowork)
+
+**Contexto:**
+Solicitado profissionalizar o painel no mesmo molde visual dos projetos "Controle de Acordos de
+Cooperação Técnica / FAROL DEPI-FVS-RCP" e "SISTEMA_OTTO_PAIC" (estilo "Apple-like"), e configurar
+atualização automática dos dados a cada 10 dias.
+
+**Referência de estilo usada:** projeto "Controle de Acordos de Cooperação Técnica, Convênios e
+Termos de Colaboração (FAROL DEPI/FVS-RCP)" — leitura do `:root` de design tokens e componentes
+(topbar em card, KPIs, cards com sombra dupla suave, tipografia `-apple-system/SF Pro`).
+
+**Agentes executados:** UI_VISUAL_INSTITUCIONAL → UI_COMPONENTES_CARDS → CORE_LOGIC_QA
+
+**Alterações aplicadas em `index.html` (CSS + reestruturação do wrapper do cabeçalho, IDs e JS 100% preservados):**
+
+| Elemento | Mudança | Agente |
+|----------|---------|--------|
+| `:root` | Tokens redesenhados: `--font-family-base` (-apple-system/SF Pro), `--radius-card/panel/btn`, `--shadow-card` (sombra dupla suave, no molde FAROL), `--shadow-card-hover`, `--focus-ring` (verde institucional), `--brand`/`--brand-dark`/`--brand-tint` substituindo o antigo `--brand:#5f7f73` | UI_VISUAL |
+| `body` | `font-family` migrado para pilha Apple-like; adicionada textura SVG institucional de fundo (opacity .04), no mesmo espírito do FAROL | UI_VISUAL |
+| `<header>` | Convertido de barra colorida fixa para `.topbar` — card branco flutuante, `border-radius`, `box-shadow:var(--shadow-card)`, `position:sticky` com respiro (`top:12px`) | UI_VISUAL |
+| `.chip` | De "pill translúcido sobre fundo verde" para pill com `--brand-tint`/`--brand-dark` sobre fundo branco (mesma pegada dos badges do FAROL) — **IDs `chipUpdated`, `chipTotal`, `chipFapeam`, `chipCnpq` inalterados** | UI_VISUAL |
+| `.panel` | `border-radius:16px`, `box-shadow:var(--shadow-card)` substituindo borda simples | UI_VISUAL |
+| `.btn`, `input`, `select` | Raio e paleta ajustados ao token system; `select` ganhou seta customizada (SVG) e `appearance:none`, igual ao padrão `.select` do FAROL; foco com `--focus-ring` verde (antes `outline` azul/verde genérico) | UI_CARDS |
+| `.card` (editais) | `box-shadow:var(--shadow-card)`/`--shadow-card-hover`, `border-radius:14px`, tipografia com `letter-spacing` mais fechado (`-0.005em` a `-0.015em`), no padrão tipográfico Apple-like | UI_CARDS |
+| `.pill`, `.pill.system` | Cores migradas para os novos tokens (`--pill`, `--brand-tint`) | UI_CARDS |
+| `.site-footer` | Apenas ajuste de `letter-spacing` e `z-index` para respeitar a nova textura de fundo — assinatura CARAVELA inalterada | UI_VISUAL |
+
+**CORE_LOGIC_QA — Resultado: APROVADO**
+- IDs: diff automatizado entre HTML antigo e novo → **0 diferenças** (todos os 19 IDs usados pelo JS preservados)
+- Bloco `<script>`: diff byte a byte entre antigo e novo → **idêntico**, nenhuma linha de JS tocada
+- Teste funcional automatizado (Playwright headless, servidor local): filtro por texto/fonte, botão "Limpar filtros", contadores (`chipTotal`, `chipFapeam`, `chipCnpq`) — todos responderam corretamente (21 → 2 → 21 editais)
+- Console do navegador: **zero erros** em 3 breakpoints (1280px desktop, 900px tablet, 375px mobile)
+- Grid responsivo (3/2/1 colunas) validado visualmente nos 3 breakpoints via screenshot
+- `data.json` e `scripts/` intocados
+
+**Automação de atualização (novidade desta sessão, revisada na sessão seguinte — ver entrada acima):**
+Criada tarefa agendada `editais-abertos-atualizacao` (cron `0 8 */10 * *`), posteriormente
+**desativada** por inviabilidade técnica (bloqueio de rede + credenciais do ambiente Claude — ver
+registro de 2026-07-25 acima). Substituída por automação local via `cron` no Mac do usuário.
+
+**Impacto no sistema:** Nenhuma lógica de dados, filtros ou renderização foi alterada — mudança
+puramente visual (CSS + wrapper do cabeçalho).
+
+**Arquivos afetados:** `index.html` (CSS e reestruturação do `<header>`→`.topbar`), `CLAUDE.md` (este registro).
+
+---
+
+### 2026-05-24 — Acabamento premium institucional — ciclo 2 (Claude Code)
+
+**Agentes executados:** UI_VISUAL_INSTITUCIONAL → UI_COMPONENTES_CARDS → CORE_LOGIC_QA
+
+**Alterações aplicadas em `index.html` (somente CSS):**
+
+| Elemento | Propriedade | Antes | Depois | Agente |
+|----------|-------------|-------|--------|--------|
+| `.t1` header | `font-size` | *(herdado)* | `15px` explícito | UI_VISUAL |
+| `.t1` header | `line-height` | *(herdado)* | `1.2` | UI_VISUAL |
+| `.titleblock` | `border-left` | *(ausente)* | `1px solid rgba(255,255,255,.28)` | UI_VISUAL |
+| `.titleblock` | `padding-left` | *(ausente)* | `18px` | UI_VISUAL |
+| `.panel h1` | `font-size` | `22px` | `20px` | UI_VISUAL |
+| `.panel h1` | `font-weight` | *(herdado)* | `700` explícito | UI_VISUAL |
+| `.panel p` | `line-height` | `1.4` | `1.6` | UI_VISUAL |
+| `.btn` | `transition` | *(ausente)* | `background .18s` | UI_CARDS |
+| `.btn:hover` | `background` | *(ausente)* | `#256054` | UI_CARDS |
+| `.btn.secondary:hover` | `background` | *(ausente)* | `#dce8e4` | UI_CARDS |
+| `input, select` | `transition` | *(ausente)* | `border-color/outline .15s` | UI_CARDS |
+| `input:focus, select:focus` | `outline` | *(padrão browser)* | `2px solid var(--brand)` | UI_CARDS |
+| `.legendBox` | `border-left` | *(ausente)* | `3px solid var(--brand)` | UI_VISUAL |
+| `.legendBox` | `border-radius` | `14px` | `12px` | UI_VISUAL |
+| `.section` | `margin-top` | `20px` | `28px` | UI_CARDS |
+| `.sectionHead` | `margin-bottom` | `10px` | `12px` | UI_CARDS |
+| `.sectionHead` | `padding-bottom` | `8px` | `10px` | UI_CARDS |
+| `.sectionHead h2` | `border-left` | *(ausente)* | `3px solid var(--brand)` | UI_CARDS |
+| `.sectionHead h2` | `padding-left` | *(ausente)* | `10px` | UI_CARDS |
+| `.num` | `background` | `var(--pill)` | `var(--brand)` | UI_CARDS |
+| `.num` | `color` | `var(--ink)` | `#fff` | UI_CARDS |
+| `.num` | `font-size` | *(herdado)* | `12px` | UI_CARDS |
+| `.num` | `width/height` | `28px` | `26px` | UI_CARDS |
+
+**CORE_LOGIC_QA — Resultado:** APROVADO — CSS puro, nenhum ID ou JS alterado.
+
+---
+
+### 2026-05-24 — Acabamento premium institucional — fase visual (Claude Code)
+
+**Agentes executados:** UI_VISUAL_INSTITUCIONAL → UI_COMPONENTES_CARDS → CORE_LOGIC_QA
+
+**Alterações aplicadas em `index.html` (somente CSS + 1 atributo inline no footer):**
+
+| Elemento | Propriedade | Antes | Depois | Agente |
+|----------|-------------|-------|--------|--------|
+| `.titleblock .t2` | `opacity` | `.95` | `.80` | UI_VISUAL |
+| `.chip` | `background` | `rgba(255,255,255,.18)` | `rgba(255,255,255,.22)` | UI_VISUAL |
+| `.chip` | `border` | `rgba(255,255,255,.25)` | `rgba(255,255,255,.32)` | UI_VISUAL |
+| `.chip` | `padding` | `8px 10px` | `8px 12px` | UI_VISUAL |
+| `.panel` | `padding` | `18px` | `22px 24px` | UI_VISUAL |
+| `.panel` (mobile) | `padding` | *(ausente)* | `16px 14px` via `@media(max-width:680px)` | UI_VISUAL |
+| `.card` | `padding` | `14px` | `16px 18px` | UI_CARDS |
+| `.card` | `box-shadow` | `0 1px 0 rgba(0,0,0,.02)` | `0 2px 8px rgba(0,0,0,.06)` | UI_CARDS |
+| `.card` | `border-left` | `4px solid var(--line)` | `4px solid rgba(95,127,115,.28)` | UI_CARDS |
+| `.card:hover` | `box-shadow` | `0 10px 22px rgba(28,54,47,.08)` | `0 8px 24px rgba(28,54,47,.13)` | UI_CARDS |
+| `.card h3` | `font-size` | `17px` | `15px` | UI_CARDS |
+| `.card h3` | `line-height` | `1.35` | `1.40` | UI_CARDS |
+| `.link` | `word-break` | `break-all` | removido | UI_CARDS |
+| `.link` | `overflow-wrap` | *(ausente)* | `break-word` | UI_CARDS |
+| `.link` | `font-size` | *(herdado)* | `12px` explícito | UI_CARDS |
+| `.card-date` | `font-size` | `12px` | `13px` | UI_CARDS |
+| `.card-date` | `font-weight` | *(normal)* | `600` | UI_CARDS |
+| `.card-date` | `color` | `var(--muted)` | `#1a5c47` | UI_CARDS |
+| `.card-date` | `margin-bottom` | `6px` | `8px` | UI_CARDS |
+| `.footer-copy` | `opacity` | `.70` | `.78` | UI_VISUAL |
+| CARAVELA container | `opacity` | `.34` | `.22` | UI_VISUAL |
+
+**CORE_LOGIC_QA — Resultado:** APROVADO
+- Nenhum `id` alterado ou removido
+- Nenhum evento JS alterado
+- Nenhuma estrutura HTML alterada
+- `data.json` intocado
+- `scripts/` intocado
+- Mudanças restritas ao bloco `<style>` e 1 atributo `opacity` inline no footer
+
+---
+
 
 ### 2026-03-23 — Revisão e correção do projeto unificado (Claude Code)
 
@@ -175,23 +479,28 @@ O `data.json` não contém esses textos, portanto não requer atualização.
 # 1. Entre na pasta do projeto
 cd "caminho/para/Editais-Abertos-Unificados-main"
 
-# 2. Execute o script
+# 2. Execute o script (busca ativa + publica automaticamente no GitHub, se houver mudanças)
 bash scripts/atualizar.sh
 ```
 
 ---
 
-## Como agendar atualização automática a cada 20 dias (macOS)
+## Como agendar atualização automática a cada 10 dias (macOS)
 
 ```bash
 # Abra o editor de cron
 crontab -e
 
 # Adicione esta linha (ajuste o caminho completo):
-0 8 */20 * * /bin/bash "/Users/walterolivasegundo/Downloads/Editais-Abertos-Unificados-main/scripts/atualizar.sh" >> "/Users/walterolivasegundo/Downloads/logs/unificado.log" 2>&1
+0 8 */10 * * /bin/bash "/Users/walterolivasegundo/Downloads/Editais-Abertos-Unificados-main/scripts/atualizar.sh" >> "/Users/walterolivasegundo/Downloads/logs/unificado.log" 2>&1
 ```
 
-Isso executa o script às **08h00** nos dias **1, 21, 41...** de cada mês (ciclo ~20 dias).
+Isso executa o script às **08h00** a cada 10 dias, fazendo busca ativa nos dois sites e publicando
+automaticamente no GitHub (branch `main`) se houver mudanças em `data.json`.
+
+**Pré-requisito único:** rodar `git push` manualmente uma vez nesta pasta (autenticando com usuário +
+Personal Access Token do GitHub, ou SSH) para o macOS salvar a credencial no Keychain — o cron
+reaproveita essa credencial silenciosamente nas execuções seguintes.
 
 ---
 
@@ -232,14 +541,21 @@ Depois execute `bash scripts/atualizar.sh` normalmente.
 - O campo `date` (prazo) pode ficar vazio se o site não exibir datas estruturadas.
 - A área dos editais é classificada como "Geral" por padrão; para categorização fina,
   edite o `data.json` manualmente.
+- **O ambiente Claude (Cowork) não consegue rodar o scraper nem publicar sozinho** — bloqueio de
+  rede (proxy de saída não permite `fapeam.am.gov.br`/`gov.br`) e isolamento de credenciais (sandbox
+  não tem acesso ao Keychain do Mac). A automação real roda via `cron` local, não via tarefa
+  agendada do Claude.
 
 ---
 
 ## Publicação no GitHub Pages
 
-1. Faça commit de todos os arquivos (incluindo o `data.json` gerado).
-2. No GitHub, vá em Settings → Pages → Source: branch `main`, pasta `/root`.
-3. O painel estará disponível em `https://<usuario>.github.io/<repo>/`.
+1. Repositório: `https://github.com/DEPI-FVS-RCP/Editais-Abertos` (branch `main`).
+2. Faça commit de todos os arquivos (incluindo o `data.json` gerado) — `scripts/atualizar.sh` já
+   faz isso automaticamente após cada scraping bem-sucedido, desde que o `git push` já tenha sido
+   autenticado manualmente uma vez (ver seção de agendamento acima).
+3. No GitHub, em Settings → Pages → Source: branch `main`, pasta `/root`.
+4. O painel está disponível em `https://depi-fvs-rcp.github.io/Editais-Abertos/`.
 
 ---
 
