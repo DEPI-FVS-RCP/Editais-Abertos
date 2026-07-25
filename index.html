@@ -6,67 +6,104 @@
   <title>Editais Abertos — FAPEAM, CNPq</title>
   <style>
     :root{
-      --bg:#f3f5f6; --card:#ffffff; --ink:#16312c; --muted:#6b7b77;
-      --brand:#5f7f73; --btn:#2f6f5f; --btn2:#e9efed; --line:#e5ece9;
-      --pill:#e8f1ee; --pill2:#eef4f2;
+      /* Paleta institucional FVS-RCP/DEPI, refinada no molde FAROL (Apple-like) */
+      --bg:#fafafa; --card:#ffffff; --ink:#16312c; --muted:#667a73;
+      --brand:#1a5c47; --brand-dark:#123f31; --brand-tint:#eaf3ef;
+      --btn2:#eef2f0; --line:#e7ece9; --border-subtle:rgba(22,49,44,.08);
+      --input-border:#d7dedb; --pill:#eaf1ee; --pill2:#f1f6f4;
+
+      --font-family-base:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --radius-card:14px; --radius-panel:16px; --radius-btn:10px;
+      --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 8px 20px rgba(15,23,42,.06);
+      --shadow-card-hover:0 2px 4px rgba(15,23,42,.05), 0 14px 32px rgba(20,60,49,.12);
+      --focus-ring:0 0 0 3px rgba(26,92,71,.16);
+      --transition-fast:.15s ease;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;background:var(--bg);color:#111;display:flex;flex-direction:column;min-height:100vh}
-    header{background:var(--brand);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;position:sticky;top:0;z-index:10}
-    header .logo{width:42px;height:42px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:0 0 auto}
-    header .logo img{width:100%;height:100%;object-fit:contain}
-    header .titleblock{min-width:220px}
-    header .titleblock .t1{font-weight:700;letter-spacing:.2px}
-    header .titleblock .t2{opacity:.80;font-size:13px}
-    header .chips{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
-    .chip{background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.32);padding:8px 12px;border-radius:999px;font-size:13px;white-space:nowrap}
-    main{max-width:1100px;margin:26px auto;padding:0 16px;flex:1;width:100%}
-    .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
-    @media(max-width:680px){.panel{padding:16px 14px}}
-    .panel h1{margin:0 0 6px 0;font-size:22px;color:var(--ink)}
-    .panel p{margin:0 0 14px 0;color:var(--muted);font-size:14px;line-height:1.4}
+    html{color-scheme:light}
+    body{margin:0;font-family:var(--font-family-base);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:var(--bg);color:#111;display:flex;flex-direction:column;min-height:100vh;position:relative;letter-spacing:-0.005em}
+
+    /* Textura institucional discreta, no mesmo espírito visual do FAROL DEPI/FVS-RCP */
+    body::before{
+      content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+      background-repeat:repeat;background-size:440px 440px;opacity:.04;
+      background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='440' height='440' viewBox='0 0 440 440'%3E%3Cg fill='none' stroke='%2316312c' stroke-width='0.5'%3E%3Cline x1='50' y1='70' x2='95' y2='55'/%3E%3Cline x1='95' y1='55' x2='120' y2='100'/%3E%3Cline x1='120' y1='100' x2='70' y2='130'/%3E%3Cline x1='50' y1='70' x2='70' y2='130'/%3E%3Cline x1='330' y1='300' x2='380' y2='330'/%3E%3Cline x1='380' y1='330' x2='360' y2='380'/%3E%3Cline x1='330' y1='300' x2='360' y2='380'/%3E%3C/g%3E%3Cg fill='%2316312c'%3E%3Ccircle cx='50' cy='70' r='1.4'/%3E%3Ccircle cx='95' cy='55' r='1.4'/%3E%3Ccircle cx='120' cy='100' r='1.4'/%3E%3Ccircle cx='70' cy='130' r='1.4'/%3E%3Ccircle cx='330' cy='300' r='1.4'/%3E%3Ccircle cx='380' cy='330' r='1.4'/%3E%3Ccircle cx='360' cy='380' r='1.4'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* ===== Topbar institucional (cabeçalho em card) ===== */
+    .topbar{
+      background:var(--card);border:1px solid var(--border-subtle);border-radius:var(--radius-panel);
+      box-shadow:var(--shadow-card);margin:16px auto 0;max-width:1100px;width:calc(100% - 32px);
+      padding:16px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+      position:sticky;top:12px;z-index:10
+    }
+    .topbar .logo{width:44px;height:44px;border-radius:10px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;flex:0 0 auto}
+    .topbar .logo img{width:100%;height:100%;object-fit:contain}
+    .topbar .titleblock{min-width:220px;border-left:1px solid var(--line);padding-left:18px}
+    .topbar .titleblock .t1{font-weight:700;font-size:15px;line-height:1.2;letter-spacing:-0.01em;color:var(--ink)}
+    .topbar .titleblock .t2{opacity:.75;font-size:13px;color:var(--muted);margin-top:2px}
+    .topbar .chips{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:var(--brand-tint);color:var(--brand-dark);border:1px solid var(--border-subtle);padding:7px 12px;border-radius:999px;font-size:12.5px;font-weight:600;white-space:nowrap}
+
+    main{max-width:1100px;margin:22px auto;padding:0 16px;flex:1;width:100%;position:relative;z-index:1}
+    .panel{background:var(--card);border:1px solid var(--border-subtle);border-radius:var(--radius-panel);padding:24px 26px;box-shadow:var(--shadow-card)}
+    @media(max-width:680px){.panel{padding:18px 16px}}
+    .panel h1{margin:0 0 6px 0;font-size:21px;color:var(--ink);font-weight:700;letter-spacing:-0.015em}
+    .panel p{margin:0 0 16px 0;color:var(--muted);font-size:14px;line-height:1.6}
+
     .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .btn{border:0;border-radius:10px;padding:10px 12px;font-weight:600;cursor:pointer;background:var(--btn);color:#fff}
-    .btn.secondary{background:var(--btn2);color:var(--ink);border:1px solid var(--line)}
-    input, select{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;min-width:180px}
+    .btn{border:1px solid transparent;border-radius:var(--radius-btn);padding:10px 14px;font-weight:600;font-size:13.5px;cursor:pointer;background:var(--brand);color:#fff;transition:background var(--transition-fast), box-shadow var(--transition-fast)}
+    .btn:hover{background:var(--brand-dark)}
+    .btn.secondary{background:var(--btn2);color:var(--ink);border:1px solid var(--input-border)}
+    .btn.secondary:hover{background:#e2e9e6}
+
+    input, select{padding:10px 12px;border-radius:10px;border:1px solid var(--input-border);background:#fff;min-width:180px;font-size:13.5px;color:#222;outline:none;transition:border-color var(--transition-fast), box-shadow var(--transition-fast)}
+    input:focus, select:focus{box-shadow:var(--focus-ring);border-color:var(--brand)}
     input{flex:1;min-width:220px}
-    .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0 4px}
-    .legendBox{background:var(--pill2);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-    .legendBox strong{display:block;color:var(--ink);margin-bottom:4px}
+    select{appearance:none;-webkit-appearance:none;-moz-appearance:none;color-scheme:light;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23667a73' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 12px center;padding-right:30px;cursor:pointer}
+
+    .legend{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 4px}
+    .legendBox{background:var(--pill2);border:1px solid var(--border-subtle);border-left:3px solid var(--brand);border-radius:12px;padding:13px 15px}
+    .legendBox strong{display:block;color:var(--ink);margin-bottom:4px;letter-spacing:-0.01em}
     .legendBox span{color:var(--muted);font-size:13px}
     @media(max-width:700px){.legend{grid-template-columns:1fr}}
-    .section{margin-top:20px}
-    .sectionHead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-    .sectionHead h2{margin:0;color:var(--ink);font-size:18px}
+
+    .section{margin-top:30px}
+    .sectionHead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+    .sectionHead h2{margin:0;color:var(--ink);font-size:18px;font-weight:700;letter-spacing:-0.01em;border-left:3px solid var(--brand);padding-left:11px}
     .sectionMeta{display:flex;gap:8px;flex-wrap:wrap}
+
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     @media(max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:680px){.cards{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,.06);border-left:4px solid rgba(95,127,115,.28);transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease}
-    .card:hover{transform:translateY(-2px);border-color:#d6e4de;border-left-color:var(--brand);box-shadow:0 8px 24px rgba(28,54,47,.13)}
+    .card{background:var(--card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);padding:17px 19px;box-shadow:var(--shadow-card);border-left:4px solid rgba(26,92,71,.22);transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+    .card:hover{transform:translateY(-2px);border-color:#d6e4de;border-left-color:var(--brand);box-shadow:var(--shadow-card-hover)}
     .cardTop{display:flex;gap:10px;align-items:flex-start}
-    .num{width:28px;height:28px;border-radius:999px;background:var(--pill);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--ink);flex:0 0 auto}
-    .pills{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 6px}
-    .pill{display:inline-block;background:var(--pill);color:var(--ink);border:1px solid var(--line);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600}
-    .pill.system{background:#dfeae6}
-    .card h3{margin:0 0 6px 0;font-size:15px;color:var(--ink);line-height:1.4}
-    .link{color:#2f6f5f;overflow-wrap:break-word;word-break:break-word;text-decoration:none;font-size:12px}
+    .num{width:26px;height:26px;border-radius:999px;background:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;flex:0 0 auto}
+    .pills{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 7px}
+    .pill{display:inline-block;background:var(--pill);color:var(--ink);border:1px solid var(--border-subtle);padding:4px 10px;border-radius:999px;font-size:11.5px;font-weight:600;letter-spacing:.2px}
+    .pill.system{background:var(--brand-tint);color:var(--brand-dark)}
+    .card h3{margin:0 0 6px 0;font-size:15px;color:var(--ink);line-height:1.42;font-weight:600;letter-spacing:-0.005em}
+    .link{color:var(--brand);overflow-wrap:break-word;word-break:break-word;text-decoration:none;font-size:12px}
     .link:hover{text-decoration:underline}
-    .card-date{font-size:13px;font-weight:600;color:#1a5c47;margin:4px 0 8px}
+    .card-date{font-size:13px;font-weight:600;color:var(--brand-dark);margin:4px 0 8px}
+
     .error{margin-top:14px;padding:12px;border:1px dashed #d9a;border-radius:12px;background:#fff7f8;color:#7a2d39;font-size:14px}
     .empty{background:#fff;border:1px dashed var(--line);padding:14px;border-radius:14px;color:var(--muted)}
-    /* Rodapé institucional */
-    .site-footer{background:var(--brand);color:#fff;margin-top:auto;padding:28px 18px 22px;position:relative}
-    .site-footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
 
-    .site-footer .footer-title{font-size:16px;font-weight:700;letter-spacing:.3px;margin-bottom:4px}
+    /* Rodapé institucional */
+    .site-footer{background:var(--brand);color:#fff;margin-top:auto;padding:30px 18px 24px;position:relative;z-index:1}
+    .site-footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+    .site-footer .footer-title{font-size:16px;font-weight:700;letter-spacing:-0.01em;margin-bottom:4px}
     .site-footer p{margin:0;font-size:13px;opacity:.92;line-height:1.6}
     .site-footer .footer-divider{width:60px;height:2px;background:rgba(255,255,255,.35);border-radius:2px;margin:10px 0}
     .site-footer .footer-copy{font-size:12px;opacity:.78;margin-top:8px}
   </style>
 </head>
 <body>
-  <header>
+  <div class="topbar">
     <div class="logo"><img src="logo.png" alt="FVS-RCP"></div>
     <div class="logo"><img src="logo_depi.png" alt="DEPI"></div>
     <div class="titleblock">
@@ -79,7 +116,7 @@
       <div class="chip" id="chipFapeam">FAPEAM: —</div>
       <div class="chip" id="chipCnpq">CNPq: —</div>
     </div>
-  </header>
+  </div>
 
   <main>
     <div class="panel">
