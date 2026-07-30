@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-25",
+  "updated_at": "2026-07-30",
   "sources": {
     "FAPEAM": {
       "name": "FAPEAM — Editais Abertos",
@@ -42,14 +42,6 @@
       "area": "Geral",
       "type": "Chamada Pública",
       "date": "2026-06-15"
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "CHAMADA PÚBLICA N.º 002/2026 – PROGRAMA DE APOIO A PESQUISAS E AÇÕES ESTRATÉGICAS PARA A BIOECONOMIA INCLUSIVA NO AMAZONAS E NO PARANÁ – FUNDAÇÃO ARAUCÁRIA/FAPEAM",
-      "url": "https://www.fapeam.am.gov.br/editais/chamada-publica-n-o-002-2026-programa-de-apoio-a-pesquisas-e-acoes-estrategicas-para-a-bioeconomia-inclusiva-no-amazonas-e-no-parana-fundacao-araucaria-fapeam/",
-      "area": "Geral",
-      "type": "Chamada Pública",
-      "date": ""
     },
     {
       "source_system": "CNPq",
