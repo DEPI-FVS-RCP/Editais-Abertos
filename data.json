@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30",
+  "updated_at": "2026-11-12",
   "sources": {
     "FAPEAM": {
       "name": "FAPEAM — Editais Abertos",
@@ -20,22 +20,6 @@
       "date": "2027-06-02"
     },
     {
-      "source_system": "FAPEAM",
-      "title": "DIRETRIZES ESPECÍFICAS DA FAPEAM CHAMADA TRANSNACIONAL CONJUNTA BIODIVERSA+ 2026-2027 “ECOSSISTEMAS EMERGENTES: BIODIVERSIDADE, CONSEQUÊNCIAS SOCIOECOLÓGICAS E TRAJETÓRIAS FUTURAS” - BIODIVFUTURO “CHAMADA BIODIVFUTURO”",
-      "url": "https://www.fapeam.am.gov.br/editais/diretrizes-especificas-da-fapeam-chamada-transnacional-conjunta-biodiversa-2026-2027-ecossistemas-emergentes-biodiversidade-consequencias-socioecologicas-e-trajetorias-futuras-b/",
-      "area": "Geral",
-      "type": "Chamada Pública",
-      "date": "2026-11-10"
-    },
-    {
-      "source_system": "FAPEAM",
-      "title": "DIRETRIZES ESPECÍFICAS DA FAPEAM CHAMADA TRANSNACIONAL CONJUNTA WATER4ALL 2026 GESTÃO SUSTENTÁVEL DOS RECURSOS HÍDRICOS “CHAMADA WATER4ALL 2026”",
-      "url": "https://www.fapeam.am.gov.br/editais/diretrizes-especificas-da-fapeamchamada-transnacional-conjunta-water4all-2026gestao-sustentavel-dos-recursos-hidricoschamada-water4all-2026/",
-      "area": "Geral",
-      "type": "Chamada Pública",
-      "date": "2026-11-10"
-    },
-    {
       "source_system": "CNPq",
       "title": "Chamada Pública CNPq/Petrobras N° 31/2026 - Projeto InspirAÇÃO",
       "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-31-2026/chamada-publica-cnpq-N-31-2026",
@@ -45,11 +29,27 @@
     },
     {
       "source_system": "CNPq",
+      "title": "Chamada Pública MCTI/CNPq/CISB/SAAB AB Nº 37/2026 - Cooperação Brasil-Suécia",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-37-2026/chamada-publica-cnpq-N-37-2026",
+      "area": "Geral",
+      "type": "Chamada Pública",
+      "date": "2027-03-12"
+    },
+    {
+      "source_system": "CNPq",
       "title": "Chamada Pública CNPq/CAPES Nº 30/2026 – Programa de Mestrado e Doutorado Acadêmico para Inovação – MAI/DAI",
       "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-30-2026/chamada-publica-cnpq-N-30-2026",
       "area": "Geral",
       "type": "Chamada Pública",
       "date": "2026-12-11"
+    },
+    {
+      "source_system": "CNPq",
+      "title": "Chamada Pública CNPq/MCTI N° 36/2026 - Apoio a cursos de curta duração em biodiversidade, no âmbito do Centro Franco-Brasileiro de Biodiversidade Amazônica (CFBBA)",
+      "url": "https://www.gov.br/cnpq/pt-br/chamadas/todas-as-chamadas/chamadas-2026/chamada-no-36-2026/chamada-publica-cnpq-N-36-2026",
+      "area": "Geral",
+      "type": "Chamada Pública",
+      "date": "2027-02-12"
     },
     {
       "source_system": "CNPq",
